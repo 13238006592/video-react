@@ -177,6 +177,14 @@ export default function PlayerPage() {
             <td>-</td>
             <td>Seek the Video at A Specific Time On Load</td>
           </tr>
+          <tr>
+            <td>
+              <code>showControlBar</code>
+            </td>
+            <td>boolean</td>
+            <td>-</td>
+            <td>If specified, the control bar will be hidden</td>
+          </tr>
         </tbody>
       </Table>
       <h4>Properties</h4>

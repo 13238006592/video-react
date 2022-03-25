@@ -112,7 +112,8 @@ export default class Player extends Component {
   }
 
   getDefaultChildren(originalChildren) {
-    return [
+    const { showControlBar = true } = this.props;
+    const children = [
       <Video
         ref={c => {
           this.video = c;
@@ -127,9 +128,13 @@ export default class Player extends Component {
       <LoadingSpinner key="loading-spinner" order={2.0} />,
       <Bezel key="bezel" order={3.0} />,
       <BigPlayButton key="big-play-button" order={4.0} />,
-      <ControlBar key="control-bar" order={5.0} />,
       <Shortcut key="shortcut" order={99.0} />
     ];
+    if (showControlBar === true || showControlBar === 'true') {
+      children.push(<ControlBar key="control-bar" order={5.0} />);
+    }
+
+    return children;
   }
 
   getChildren(props) {
